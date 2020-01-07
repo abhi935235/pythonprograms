@@ -19,6 +19,12 @@ total1 = []
 global flag
 global cut_2d
 
+counter=0
+
+means = []
+
+global means
+
 cut_2d = []
 
 sample = 1
@@ -85,12 +91,18 @@ def new1():
 
 
 def show():
+    
+    counter = counter+1
     # no_of_entries +=1
     global sample
-
+    cut_1d = []
     for i in range(s):
         cut_1d.append(int(ent1[i].get()))
+    #print(cut_1d)
+    
+    cut_2d = []
     cut_2d.append(cut_1d)
+    #check 1
     print(cut_2d)
     c_and_acc.append(ent4.get())
     calc()
@@ -99,8 +111,9 @@ def show():
 
 
 def calc():
-    print(statistics.mean((cut_2d[0])))
-
+    means.append(statistics.mean(cut_2d[0]))
+    print(means[counter])
+ 
 
 
 #    ent3.insert(0, str(float(sum(value.get())) / i))

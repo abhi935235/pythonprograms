@@ -18,6 +18,7 @@ total = []
 total1 = []
 global flag
 global cut_2d
+global count_click
 
 cut_2d = []
 
@@ -90,8 +91,10 @@ def show():
 
     for i in range(s):
         cut_1d.append(int(ent1[i].get()))
-    cut_2d.append(cut_1d)
+    cut_2d = cut_2d + cut_1d
     print(cut_2d)
+    cut_1d = []
+    count_click += 1
     c_and_acc.append(ent4.get())
     calc()
     ent3.insert(0, calc())
